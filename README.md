@@ -1,3 +1,5 @@
+This is a project for CIS 343 to introduce javascript.
+
 # Welcome to OoGlE
 
 Yes, that's right! You now work for the esteemed and luxurious company, OoGlE. Creators of such products like O-mail, OoGlE Thrive, and that one program that watches you sleep!
