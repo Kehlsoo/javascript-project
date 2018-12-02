@@ -13,7 +13,7 @@ const database = require('./programmers.json');
 // Make an instance of our express application
 const app = express();
 // Specify our > 1024 port to run on
-const port = 3000;
+const port = 4051;
 
 // Apply our middleware so our code can natively handle JSON easily
 app.use(bodyParser.json());
@@ -23,26 +23,39 @@ if (!fs.existsSync('./programmers.json')) {
   throw new Error('Could not find database of programmers!');
 }
 
-// Build our routes
-
-app.get('/', (req, res) => {
-  res.send('Fill me in to return ALL programmers!');
+//returns all slaves
+app.get('/all', (req, res) => {
+  res.send(database);
 });
 
+//returns specific slave
 app.get('/:id', (req, res) => {
   const id = req.params.id;
 
-  res.send(`Fill me in to return values with ID: ${id}`);
+  //https://stackoverflow.com/questions/38679942/javascript-find-object-name-in-an-array
+  let slave = database.find(o => o[id]);
+
+  res.send(slave);
 });
 
+//update the slave's info
 app.put('/:id', (req, res) => {
   const id = req.params.id;
+  let slave = database.find(o => o[id]);
 
-  res.send(`Fill me in to update values with ID: ${id}`);
+  slave.firstName = body.firstName;
+  slave.lastName = body.lastName;
+  slave.age = body.parseInt(body.age)
+  slave.role = body.role;
+
+  res.send(slave);
 });
 
+//make a new slave
 app.post('/', (req, res) => {
-  const body = req.body; // Hold your JSON in here!
+  const body = req.body;
+
+  database.push(body);
 
   res.send(`You sent: ${body}`);
 });

@@ -1,24 +1,57 @@
-{
-    "firstName": "jeff",
-    "lastName": "burt",
-    "homeAddress": "1234 Mayberry Lane",
-    "SID": "48764-938102-87462",
-    "goodSlave": "true",
-    "beatingsToDate": 127,
-    "family": {
-        "wife": {},
-        "husband": {
-            "firstName": "Torfelvin",
+    [
+       { "jeff":{
+            "firstName": "jeff",
             "lastName": "burt",
             "homeAddress": "1234 Mayberry Lane",
-            "SID": "NS",
-            "goodSlave": "NS",
-            "beatingsToDate": -1
-        },
-       "children": {
-            "Designation": "Jeff Jr.",
-       		"Designation": "Turtle Person",
-        	"Designation": "REDACTED"
-        }
-    }
-}
+            "SID": "48764-938102-87462",
+            "goodSlave": "true",
+            "beatingsToDate": 127,
+            "family": {
+                "wife": {},
+                "husband": {
+                    "firstName": "Torfelvin",
+                    "lastName": "burt",
+                    "homeAddress": "1234 Mayberry Lane",
+                    "SID": "NS",
+                    "goodSlave": "NS",
+                    "beatingsToDate": -1
+                },
+                "children": [
+                 {
+                    "Designation": "Jeff Jr."
+                },
+                {
+                    "Designation": "Turtle Person"
+                },
+                {
+                    "Designation": "REDACTED"
+                }
+            ]
+            }
+        }},
+
+        { "santa":{
+            "firstName": "santa",
+            "lastName": "claus",
+            "homeAddress": "1235 merry Lane",
+            "SID": "25764-218902-87462",
+            "goodSlave": "false",
+            "beatingsToDate": 1000,
+            "family": {
+                "wife": {
+                    "firstName": "Mrs",
+                    "lastName": "claus",
+                    "homeAddress": "1235 merry Lane",
+                    "SID": "NS",
+                    "goodSlave": "NS",
+                    "beatingsToDate": 2
+                },
+                "husband": {},
+                "children": [
+                 {
+                    "Designation": "Nick"
+                }
+            ]
+            }
+        }}
+    ]
