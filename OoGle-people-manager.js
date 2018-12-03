@@ -54,13 +54,16 @@ app.put('/:id', (req, res) => {
 //make a new slave
 app.post('/', (req, res) => {
   const body = req.body;
-
-  database.push(body);
-
+  database.push(body); //adds new slave to database
   res.send(`You sent: ${body}`);
 });
 
 // IMPLEMENT A ROUTE TO HANDLE ALL OTHER ROUTES AND RETURN AN ERROR MESSAGE
+app.get("*", (req, res) => {
+  res.send('3RROR!');
+  console.log(`help`);
+});
+
 
 app.listen(port, () => {
   console.log(`She's alive on port ${port}`);
