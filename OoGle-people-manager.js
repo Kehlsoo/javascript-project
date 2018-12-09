@@ -45,8 +45,16 @@ app.put('/:id', (req, res) => {
 
   slave.firstName = body.firstName;
   slave.lastName = body.lastName;
-  slave.age = body.parseInt(body.age)
-  slave.role = body.role;
+  slave.homeAddress = body.homeAddress;
+  slave.SID = body.SID;
+  slave.goodSlave = body.goodSlave;
+  slave.beatingsToDate = body.parseInt(body.beatingsToDate);
+
+  slave.family.wife.push(body.slave.family.wife);
+  slave.family.husband.push(body.slave.family.husband);
+  slave.family.children.push(body.slave.family.children);
+
+  
 
   res.send(slave);
 });
@@ -55,13 +63,12 @@ app.put('/:id', (req, res) => {
 app.post('/', (req, res) => {
   const body = req.body;
   database.push(body); //adds new slave to database
-  res.send(`You sent: ${body}`);
+  res.send(`Slave created: ${body}`);
 });
 
 // IMPLEMENT A ROUTE TO HANDLE ALL OTHER ROUTES AND RETURN AN ERROR MESSAGE
 app.get("*", (req, res) => {
   res.send('3RROR!');
-  console.log(`help`);
 });
 
 
